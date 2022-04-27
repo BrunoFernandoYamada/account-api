@@ -1,6 +1,6 @@
 # Projeto Account
 
-##Requires
+# Requires
 
 * Java 11
 * Docker - https://docs.docker.com/install/
@@ -8,7 +8,7 @@
 * Gradle - https://gradle.org/install/
 
 
-##Extras:
+# Extras:
 
 * Adicionei o campo balance na entidade Account para controle de saldo.
 * Coloquei a regra para não subtrair caso não haja saldo suficiente.
@@ -20,7 +20,7 @@
 
 ---
 
-#Rodado o profile de prod (POSTGRES)
+# Rodado o profile de prod (POSTGRES)
 
 
 * Na raiz do projeto buildar o projeto:
@@ -64,7 +64,7 @@ http://localhost:15432
 * Instalar no Intellij o plugin do lombok, caso ainda esteja instalado.
 * Adicionar configuração de execução com java 11 e executar.
 
-#( Opcional )
+# ( Opcional )
 
 * Caminho do banco em memória/arquivo: http://localhost:8080/h2-console
   * driver: org.h2.Driver
@@ -73,11 +73,11 @@ http://localhost:15432
   * sem senha deixar o campo password em branco
 
 
----------------------------------------
+---
 
 
 # Testes:
 
 * Importar no postman o arquivo 'ACCOUNT-API.postman_collection.json' que se encontra na pasta /postma-test
 
----------------------------------------
+---
