@@ -23,7 +23,7 @@
 # Rodado o profile de prod (POSTGRES)
 
 
-* Na raiz do projeto buildar o projeto:
+* Na raíz do projeto buildar o projeto:
 ```bash
 $ gradle clean build
 ```
@@ -78,6 +78,6 @@ http://localhost:15432
 
 # Testes:
 
-* Importar no postman o arquivo 'ACCOUNT-API.postman_collection.json' que se encontra na pasta /postma-test
+* Importar no postman o arquivo 'ACCOUNT-API.postman_collection.json' que se encontra na pasta /postman-test
 
 ---
