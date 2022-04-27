@@ -14,7 +14,7 @@ public class ExceptionsHandler {
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorResponse> illegalArgExceptionHandler(IllegalArgumentException ex, HttpServletRequest request){
         ErrorResponse standardError = ErrorResponse.builder()
-                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .status_code(HttpStatus.BAD_REQUEST.value())
                 .timestamp(System.currentTimeMillis())
                 .message(ex.getMessage())
                 .build();
