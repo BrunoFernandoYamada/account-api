@@ -21,7 +21,8 @@ public class Account {
     @Column(name = "account_ID")
     private Long accountId;
 
-    @Column(name = "document_number")
+
+    @Column(name = "document_number", nullable = false, unique = true)
     private String document;
 
     @Column(name = "balance")

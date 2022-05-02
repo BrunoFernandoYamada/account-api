@@ -3,7 +3,7 @@ package br.com.byamada.accountapi.service;
 import br.com.byamada.accountapi.domain.model.OperationType;
 import br.com.byamada.accountapi.domain.repository.OperationTypeRepository;
 import br.com.byamada.accountapi.mock.MockModel;
-import br.com.byamada.accountapi.service.impl.OperationTypeServiceImpl;
+import br.com.byamada.accountapi.domain.request.impl.OperationTypeServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

@@ -3,6 +3,7 @@ package br.com.byamada.accountapi.mock;
 import br.com.byamada.accountapi.domain.model.Account;
 import br.com.byamada.accountapi.domain.model.OperationType;
 import br.com.byamada.accountapi.domain.model.Transaction;
+import br.com.byamada.accountapi.domain.request.AccountRequest;
 import br.com.byamada.accountapi.domain.request.TransactionRequest;
 
 import java.math.BigDecimal;
@@ -54,6 +55,13 @@ public class MockModel {
                 .operationType(mockOperationType())
                 .amount(BigDecimal.valueOf(1000))
                 .eventTime(LocalDateTime.now())
+                .build();
+    }
+
+    public static AccountRequest mockAccountRequest(){
+        return AccountRequest.builder()
+                .documentNumber("123456789")
+                .amount(BigDecimal.valueOf(1000))
                 .build();
     }
 

@@ -3,7 +3,7 @@ package br.com.byamada.accountapi.service;
 import br.com.byamada.accountapi.domain.model.Account;
 import br.com.byamada.accountapi.domain.repository.AccountRepository;
 import br.com.byamada.accountapi.mock.MockModel;
-import br.com.byamada.accountapi.service.impl.AccountServiceImpl;
+import br.com.byamada.accountapi.domain.request.impl.AccountServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -36,7 +36,7 @@ class AccountServiceImplTest {
 
     @Test
     void createAccount() {
-        assertEquals(accountService.createAccount("123456789"), MockModel.mockAccount());
+        assertEquals(accountService.createAccount(MockModel.mockAccountRequest()), MockModel.mockAccount());
     }
 
     @Test
@@ -45,7 +45,7 @@ class AccountServiceImplTest {
 
         IllegalArgumentException thrown = assertThrows(
                 IllegalArgumentException.class,
-                () -> accountService.createAccount("123456789")
+                () -> accountService.createAccount(MockModel.mockAccountRequest())
         );
 
         assertTrue(thrown.getMessage().contains("Already exists an account with the informed document"));

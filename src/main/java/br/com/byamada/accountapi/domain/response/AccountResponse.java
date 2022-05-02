@@ -1,6 +1,5 @@
 package br.com.byamada.accountapi.domain.response;
 
-import br.com.byamada.accountapi.domain.model.Account;
 import lombok.Builder;
 import lombok.Data;
 

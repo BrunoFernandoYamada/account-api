@@ -1,4 +1,4 @@
-package br.com.byamada.accountapi.service.impl;
+package br.com.byamada.accountapi.domain.request.impl;
 
 import br.com.byamada.accountapi.domain.model.OperationType;
 import br.com.byamada.accountapi.domain.repository.OperationTypeRepository;

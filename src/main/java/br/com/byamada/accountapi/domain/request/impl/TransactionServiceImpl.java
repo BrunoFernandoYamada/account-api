@@ -1,4 +1,4 @@
-package br.com.byamada.accountapi.service.impl;
+package br.com.byamada.accountapi.domain.request.impl;
 
 import br.com.byamada.accountapi.domain.model.Account;
 import br.com.byamada.accountapi.domain.model.OperationType;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service

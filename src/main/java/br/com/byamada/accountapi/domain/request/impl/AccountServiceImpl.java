@@ -1,11 +1,13 @@
-package br.com.byamada.accountapi.service.impl;
+package br.com.byamada.accountapi.domain.request.impl;
 
 import br.com.byamada.accountapi.domain.model.Account;
 import br.com.byamada.accountapi.domain.repository.AccountRepository;
+import br.com.byamada.accountapi.domain.request.AccountRequest;
 import br.com.byamada.accountapi.domain.response.BalanceResponse;
 import br.com.byamada.accountapi.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
 
@@ -15,14 +17,29 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     private AccountRepository repository;
 
-    public Account createAccount(String document) {
-            if(repository.findByDocument(document).isPresent()){
+    public Account createAccount(AccountRequest accountRequest) {
+        if(StringUtils.isEmpty(accountRequest.getDocumentNumber())) {
+            throw new IllegalArgumentException("Invalid request, send a valid account");
+        }
+
+        if(repository.findByDocument(accountRequest.getDocumentNumber()).isPresent()){
                 throw new IllegalArgumentException("Already exists an account with the informed document.");
-            }
-            Account account = Account.builder()
-                    .document(document)
-                    .balance(BigDecimal.ZERO)
+        }
+
+        if(accountRequest.getAmount() == null) {
+            throw new IllegalArgumentException("Invalid amount.");
+        }
+
+        Account account;
+
+        if(accountRequest.getAmount().compareTo(BigDecimal.ZERO) >= 0){
+            account = Account.builder().document(accountRequest.getDocumentNumber())
+                    .balance(accountRequest.getAmount())
                     .build();
+        } else {
+            throw new IllegalArgumentException("Send a positive value.");
+        }
+
         return repository.save(account);
     }
 

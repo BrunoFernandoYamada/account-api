@@ -4,24 +4,18 @@ import br.com.byamada.accountapi.domain.model.Transaction;
 import br.com.byamada.accountapi.domain.repository.TransactionRepository;
 import br.com.byamada.accountapi.domain.request.TransactionRequest;
 import br.com.byamada.accountapi.mock.MockModel;
-import br.com.byamada.accountapi.service.AccountService;
-import br.com.byamada.accountapi.service.OperationTypeService;
-import br.com.byamada.accountapi.service.impl.TransactionServiceImpl;
+import br.com.byamada.accountapi.domain.request.impl.TransactionServiceImpl;
 import br.com.byamada.accountapi.strategies.CompraAVistaStrategy;
 import br.com.byamada.accountapi.strategies.OperationStrategy;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 
